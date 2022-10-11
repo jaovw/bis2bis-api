@@ -1,0 +1,20 @@
+{
+  "name": "bis2bis-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/jaovw/bis2bis-api.git",
+  "author": "jaovw <joojvw@gmail.com>",
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "axios": "^1.1.2",
+    "express": "^4.18.2",
+    "pino": "^8.6.1"
+  },
+  "devDependencies": {
+    "pino-pretty": "^9.1.1"
+  },
+  "scripts": {
+    "dev": "node index.js | pino-pretty"
+  }
+}
