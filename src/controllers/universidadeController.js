@@ -1,12 +1,11 @@
 import axios from "axios";
 import { logger } from "../utils/logger.js";
 
-async function getUniversidade(req, res) {
+async function getUniversidade(param) {
 
-    // REALIZANDO INCIALMENTE COM PAIS FIXO
     try {
         const { data, status } = await axios.get(
-            `http://universities.hipolabs.com/search?country=uruguay`,
+            `http://universities.hipolabs.com/search?country=${param}`,
             {
                 headers: {
                     Accept: 'aplication/json'
