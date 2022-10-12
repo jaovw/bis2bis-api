@@ -4,28 +4,37 @@ import model from "../models/universidade.js";
 import { dbConnect } from "./connection.js"
 
 const paises = [
+    "suriname",
     "argentina",
     "brazil",
     "chile",
     "colombia",
-    "paraguai",
+    "paraguay",
     "peru",
-    "suriname",
     "uruguay"
 ]
 
-async function insertDb(req, res) {
-    // SPREAD NAO DEU CERTO, INDO APENAS PAISES[0]
-    const resultadoAxios = await getUniversidade(...paises)
+async function insertDb() {
 
-    try {
-        await dbConnect()
-        await model.create(resultadoAxios)
-    } catch (e) {
-        logger.error(e)
+    let param = paises[0]
+    let i = paises.length
+    while (i > 0) {
+
+        let resultadoAxios = await getUniversidade(param)
+
+        try {
+            await dbConnect()
+            await model.create(resultadoAxios)
+        } catch (e) {
+            logger.error(e)
+        }
+
+        param = paises.pop()
+
+        i--
     }
+
     logger.info('Insersao feita')
-    res.status(200).send('Dados inseridos')
 }
 
-export { insertDb }
+insertDb()
