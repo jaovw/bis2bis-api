@@ -8,7 +8,7 @@ async function dbConnect() {
         await mongoose.connect(
             `mongodb+srv://admin:${process.env.DB_PASSWORD}@bis2bis.lhjrcau.mongodb.net/?retryWrites=true&w=majority`
         )
-        logger.info('Sucesso na conexao')
+
     } catch (e) {
         logger.error(e)
     }
