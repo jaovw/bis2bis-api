@@ -23,4 +23,27 @@ async function getListagem(req, res) {
     }
 }
 
-export { getListagem }
+async function getQueryListagem(req, res) {
+
+    const param = stringUp(req.query['country'])
+
+    try {
+
+        await dbConnect()
+        const listagem = await model.find({
+            country: param
+        },{
+            state_province: 0,
+            __v: 0,
+            domains: 0,
+            web_pages: 0
+        })
+
+        return res.status(200).send(listagem)
+    } catch (error) {
+        logger.error(error)
+        res.status(500).json({ error: e })
+    }
+}
+
+export { getListagem, getQueryListagem }
