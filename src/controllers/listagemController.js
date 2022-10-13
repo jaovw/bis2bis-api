@@ -37,13 +37,30 @@ async function getQueryListagem(req, res) {
             __v: 0,
             domains: 0,
             web_pages: 0
-        })
-
+        }).limit(20)
         return res.status(200).send(listagem)
-    } catch (error) {
-        logger.error(error)
+    } catch (e) {
+        logger.error(e)
+        res.status(500).json({ error: e })
+    }
+    
+}
+
+async function getIdListagem(req,res) {
+    
+    const id = req.params.id
+
+    try {
+
+        await dbConnect()
+        const listagem = await model.findOne({_id: id})
+ 
+        return res.status(200).send(listagem)
+
+    } catch (e) {
+        logger.error(e)
         res.status(500).json({ error: e })
     }
 }
 
-export { getListagem, getQueryListagem }
+export { getListagem, getQueryListagem, getIdListagem }
