@@ -3,10 +3,12 @@ import mongoose, { Schema } from "mongoose";
 const universidadeSchema = new Schema({
     country: {
         type: String,
+        maxLength: 20,
         required: true
     },
     alpha_two_code: {
         type: String,
+        maxLength: 2,
         required: true 
     },
     name: {
