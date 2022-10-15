@@ -37,6 +37,13 @@ Sendo utilizado o Node.js como stack principal e MongoDB para base de dados.
    - Método DELETE
       - Exclusão: http://ec2-18-213-245-167.compute-1.amazonaws.com:3000/universities/ {id_a_ser_deletado}
 
+ ## __CORPO DA REQUISIÇÃO__ :muscle:
+ Para o método POST é necessário o envio de um body na requisição. Sendo ele em formato JSON com os seguintes campos e características:
+ 
+ ![image](https://user-images.githubusercontent.com/62576977/195970449-639d77f1-4eb6-49e0-a613-b3011a954a69.png)
+
+
+ Para o desenvolvimento foi utilizado o Postman, sendo possível a utilização de outras ferramentas API client.
 
  ## __DOCKER__ :whale2:
  Disponível em ambiente local, caso usuário/dev tenha o Docker em sua máquina. Utilizando o Docker Compose.
