@@ -6,7 +6,7 @@ Case back-end com dois objetivos a serem desenvolvidos e implementados.
 Sendo a stack usada - Node.js
 
 #### OBJETIVO 01:
-  Criação de script para popular um banco de dados utilizando o MOngoDB a partir de uma API fornecida.
+  Criação de script para popular um banco de dados utilizando o MongoDB a partir de uma API fornecida.
 
 #### OBJETIVO 02:
   Criação de uma API Rest viabilizando um CRUD, para gestão dos dados utilizados.
@@ -16,7 +16,7 @@ Sendo a stack usada - Node.js
   
   Foi usado o Amazon container service (EC2 ECS), que permite escalar contêineres do docker com alto desempenho.
   
-  Após a criação da Docker COntainer Image em repositorio na AWS, a instância criada disponibiliza a utilização e acesso.
+  Após a criação da Docker Container Image em repositorio na AWS, a instância criada disponibiliza a utilização e acesso.
   
   ### ACESSO :door:
   Com a configuração e liberação da porta 3000 da instância, temos para acesso a URL: http://ec2-18-213-245-167.compute-1.amazonaws.com/
@@ -28,6 +28,8 @@ Sendo a stack usada - Node.js
    - Metodo GET
       - Listagem: http://ec2-18-213-245-167.compute-1.amazonaws.com:3000/universities
       - Listagem por id: http://ec2-18-213-245-167.compute-1.amazonaws.com:3000/universities/ {id_a_ser_buscado}
+      - Listagem por pais (query string):
+         http://ec2-18-213-245-167.compute-1.amazonaws.com:3000/universities/country/query?country= {nome_pais}
    - Metodo POST
       - Cadastro: http://ec2-18-213-245-167.compute-1.amazonaws.com:3000/universities
    - Metodo PUT/PATCH
@@ -37,9 +39,11 @@ Sendo a stack usada - Node.js
 
 
  ## __DOCKER__ :whale2:
+ Disponível em ambiente local, caso usuário/dev tenha o Docker em sua máquina. Utilizando o Docker Compose.
   ```
    docker-compose up
   ```
+  Docker já configurado.
   ## __DEPLOY__ :rocket:
   Instalação de dependências
   ```
@@ -58,4 +62,6 @@ Sendo a stack usada - Node.js
   ```
    yarn start
   ```
+
+  
   
