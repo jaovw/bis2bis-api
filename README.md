@@ -3,7 +3,7 @@
 
 Case back-end com dois objetivos a serem desenvolvidos e implementados. 
 
-Sendo a stack usada - Node.js
+Sendo utilizado o Node.js como stack principal e MongoDB para base de dados.
 
 #### OBJETIVO 01:
   Criação de script para popular um banco de dados utilizando o MongoDB a partir de uma API fornecida.
@@ -25,16 +25,16 @@ Sendo a stack usada - Node.js
   
   ### ROTAS :twisted_rightwards_arrows:
   
-   - Metodo GET
+   - Método GET
       - Listagem: http://ec2-18-213-245-167.compute-1.amazonaws.com:3000/universities
       - Listagem por id: http://ec2-18-213-245-167.compute-1.amazonaws.com:3000/universities/ {id_a_ser_buscado}
-      - Listagem por pais (query string):
-         http://ec2-18-213-245-167.compute-1.amazonaws.com:3000/universities/country/query?country= {nome_pais}
-   - Metodo POST
+      - Listagem por pais: http://ec2-18-213-245-167.compute-1.amazonaws.com:3000/universities/country/query?country= {nome_pais}
+
+   - Método POST
       - Cadastro: http://ec2-18-213-245-167.compute-1.amazonaws.com:3000/universities
-   - Metodo PUT/PATCH
+   - Método PUT/PATCH
       - Atualização: http://ec2-18-213-245-167.compute-1.amazonaws.com:3000/universities/ {id_a_ser_atualizado}
-   - Metodo DELETE
+   - Método DELETE
       - Exclusão: http://ec2-18-213-245-167.compute-1.amazonaws.com:3000/universities/ {id_a_ser_deletado}
 
 
@@ -68,8 +68,20 @@ Sendo a stack usada - Node.js
  
  Está disponível nessa API as query string, que atraves delas é possivel filtrar sua consulta 😉
  
- #### COMO FAZER
+ #### COMO FAZER 🤔
+ Ao utilizar uma rota semelhante as demais vistas, conseguimos passar por parametro pares/valores que serão lidos
  
+ Seu uso é simples, após a URL adicionamos o primeiro valor usando a sintaxe: "query?" seguido de "Chave=Valor"
+ 
+ #### NA PRÁTICA:
+ 
+ Para utilizar o filtro de pais:
+  - http://ec2-18-213-245-167.compute-1.amazonaws.com:3000/universities/country/query?country= {nome_pais}
+
+Para retirar a limitação de registros:
+
+  - http://ec2-18-213-245-167.compute-1.amazonaws.com:3000/universities/country/query?country=argentina&page= {_numero_}
+  - http://ec2-18-213-245-167.compute-1.amazonaws.com:3000/universities/query?page= {_numero_}
   
   
   
