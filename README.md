@@ -54,17 +54,17 @@ Sendo utilizado o Node.js como stack principal e MongoDB para base de dados.
   ```
    yarn dev
   ```
-  Script para inserção de dados no MongoDB (Registros já inseridos)
+  Script para inserção de dados no MongoDB ⚠️(Registros já inseridos) ⚠️
   ```
    yarn insert
   ```
-  Script do qual realiza todos os procedimentos necessários. Inserção e inicio da API. (Script utilizado apenas uma vez)
+  Script do qual realiza todos os procedimentos necessários. Inserção e inicio da API. ⚠️ (Script utilizado apenas uma vez) ⚠️
   ```
    yarn start
   ```
   ## __NOTAS__ 💡
   
- Para as rotas do tipo GET, estão limitados os registros por conta da grande quantidade. ⚠️
+ Para as rotas do tipo GET, estão limitados os registros por conta da grande quantidade. :package:
  
  Está disponível nessa API as query string, que atraves delas é possivel filtrar sua consulta 😉
  
