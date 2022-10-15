@@ -4,7 +4,12 @@ import model from "../models/universidade.js"
 import stringUp from "../utils/stringUp.js"
 
 async function getListagem(req, res) {
+    
+    const param = req.query['page']
 
+    let limite
+    param ? limite = 2000: limite = 20
+    
     try {
 
         await dbConnect()
@@ -13,7 +18,7 @@ async function getListagem(req, res) {
             __v: 0,
             domains: 0,
             web_pages: 0
-        })
+        }).limit(limite).skip(Math.floor(Math.random() * 20))
  
         return res.status(200).send(listagem)
 
@@ -25,7 +30,18 @@ async function getListagem(req, res) {
 
 async function getQueryListagem(req, res) {
 
-    const param = stringUp(req.query['country'])
+    let param = req.query['country']
+
+    if(!param) {
+        return res.status(500).json({messa: `Parametros incorretos para essa rota`})
+    }
+
+    param = stringUp(param)
+    
+    const page = (req.query['page'])
+
+    let limite
+    page ? limite = 2000: limite = 20
 
     try {
 
@@ -37,7 +53,8 @@ async function getQueryListagem(req, res) {
             __v: 0,
             domains: 0,
             web_pages: 0
-        }).limit(20)
+        }).limit(limite).skip(Math.floor(Math.random() * 20))
+
         return res.status(200).send(listagem)
     } catch (e) {
         logger.error(e)
