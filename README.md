@@ -12,7 +12,29 @@ Sendo a stack usada - Node.js
   Criação de uma API Rest viabilizando um CRUD, para gestão dos dados utilizados.
   
   ## __HOSPEDAGEM__ :house:
+  Sendo necessário a hospedagem em um ambiente ubuntu em máquina virtualizada AWS.
   
+  Foi usado o Amazon container service (EC2 ECS), que permite escalar contêineres do docker com alto desempenho.
+  
+  Após a criação da Docker COntainer Image em repositorio na AWS, a instância criada disponibiliza a utilização e acesso.
+  
+  ### ACESSO :door:
+  Com a configuração e liberação da porta 3000 da instância, temos para acesso a URL: http://ec2-18-213-245-167.compute-1.amazonaws.com/
+  
+  Respeitando as rotas configuradas na API, seguimos com o detalhamento:
+  
+  ### ROTAS :twisted_rightwards_arrows:
+  
+   - Metodo GET
+      - Listagem: http://ec2-18-213-245-167.compute-1.amazonaws.com:3000/universities
+      - Listagem por id: http://ec2-18-213-245-167.compute-1.amazonaws.com:3000/universities/ {id_a_ser_buscado}
+   - Metodo POST
+      - Cadastro: http://ec2-18-213-245-167.compute-1.amazonaws.com:3000/universities
+   - Metodo PUT/PATCH
+      - Atualização: http://ec2-18-213-245-167.compute-1.amazonaws.com:3000/universities/ {id_a_ser_atualizado}
+   - Metodo DELETE
+      - Exclusão: http://ec2-18-213-245-167.compute-1.amazonaws.com:3000/universities/ {id_a_ser_deletado}
+
 
  ## __DOCKER__ :whale2:
   ```
