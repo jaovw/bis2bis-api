@@ -1,6 +1,18 @@
 # bis2bis-api 🧩
 ## SOBRE 📎
-Case back-end
+
+Case back-end com dois objetivos a serem desenvolvidos e implementados. 
+
+Sendo a stack usada - Node.js
+
+#### OBJETIVO 01:
+  Criação de script para popular um banco de dados utilizando o MOngoDB a partir de uma API fornecida.
+
+#### OBJETIVO 02:
+  Criação de uma API Rest viabilizando um CRUD, para gestão dos dados utilizados.
+  
+  ## __HOSPEDAGEM__ :house:
+  
 
  ## __DOCKER__ :whale2:
   ```
