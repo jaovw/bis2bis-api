@@ -7,7 +7,7 @@ import exclusaoController from "./controllers/exclusaoController.js"
 
 const router = Router()
 
-router.get('/universities', getListagem)
+router.get('/universities/:page?', getListagem)
 
 router.get('/universities/:id', getIdListagem)
 
